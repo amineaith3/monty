@@ -64,8 +64,8 @@ void find_function(char *, char *, int, int);
 stack_t *create_node(int position);
 void nodes_free(void);
 void stack_to_print(stack_t **, unsigned int);
-void add_to_the_stack(stack_t **, unsigned int);
-void add_to_the_queue(stack_t **, unsigned int);
+void add_tote_stack(stack_t **, unsigned int);
+void add_tote_queue(stack_t **, unsigned int);
 
 void call_function(op_func, char *, char *, int, int);
 
