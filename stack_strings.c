@@ -51,3 +51,59 @@ void p_str(stack_t stack, __attribute__((unused))unsigned int line)
 	}
 	printf("\n");
 }
+
+
+
+
+/**
+ * rot_l - is a function to rotate the first element to the last place
+ * @stack: a pointer to the stack
+ * @line: is a number to identify the op_code
+ */
+
+void rot_l(stack_t stack, __attribute__((unused))unsigned int line)
+{
+	stack *tmp;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	{
+		return;
+	}
+	tmp = *stack;
+	while (tmp != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = *stack;
+	(*stack)->prev = tmp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
+}
+
+
+/**
+ * rot_r - is a function to rotate the last elemnt to the first place
+ * @stack: is a pointer to the stack
+ * @line: is a number to identify the op_code
+ */
+
+void rot_r(stack_t stack, __attribute__((unused))unsigned int line)
+{
+	stack *tmp;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	{
+		return;
+	}
+	tmp = *stack;
+
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+
+	tmp->next = *stack;
+	tmp->prev->next = NULL;
+	tmp->prev = NULL;
+	(*stack)->prev = tmp;
+	(*stack) = tmp;
+}

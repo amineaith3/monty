@@ -85,6 +85,8 @@ void mod_in_nodes(stack_t **, unsigned int);
 void p_char(stack_t **, unsigned int);
 void p_str(stack_t **, unsigned int);
 void rot_l(stack_t **, unsigned int);
+void rot_r(stack_t **, unsigned int);
+
 
 /*Error hanlding functions*/
 void code_to_error_1(int code_error, ...);
