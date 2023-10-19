@@ -54,4 +54,39 @@ void stack_to_print(stack_t **stack, unsigned int line)
 
 }
 
+/**
+ * pop_from_top - is a function to pop content from the stack
+ * @stack: a pointer to the stack
+ * @line: a number to the line of the op_code
+ */
 
+void pop_from_top(stack_t **stack, unsigned int line)
+{
+	stack_t *tmp;
+
+	if (stack == NULL || *stack == NULL)
+		code_to_error_2(7, line);
+
+	tmp = *stack;
+	*stack = tmp->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(tmp);
+}
+
+
+
+/**
+ * print_in_top - is a function to print the content form the top of the stack
+ * @stack: is a pointer to the stack
+ * @line: is a number to the line of the op_code
+ */
+
+void print_in_top(stack_t **stack, unsigned int line)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		code_to_error_2(6, line);
+	}
+	printf("%d\n", (*stack)->n);
+}
