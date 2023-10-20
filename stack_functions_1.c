@@ -10,7 +10,7 @@
 
 void add_tote_stack(stack_s **new_node, __attribute__((unused))unsigned int line)
 {
-	stack_t *tmp;
+	stack_s *tmp;
 
 	if (new_node == NULL || *new_node == NULL)
 	{
@@ -38,7 +38,7 @@ void add_tote_stack(stack_s **new_node, __attribute__((unused))unsigned int line
 
 void stack_to_print(stack_s **stack, unsigned int line)
 {
-	stack_t *tmp;
+	stack_s *tmp;
 
 	(void) line;
 	if (stack ==  NULL)
@@ -62,7 +62,7 @@ void stack_to_print(stack_s **stack, unsigned int line)
 
 void pop_from_top(stack_s **stack, unsigned int line)
 {
-	stack_t *tmp;
+	stack_s *tmp;
 
 	if (stack == NULL || *stack == NULL)
 		code_to_error_2(7, line);

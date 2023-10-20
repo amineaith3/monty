@@ -108,7 +108,7 @@ void code_to_error_string(int code_error, ...)
 	switch (code_error)
 	{
 		case 10:
-			fprint(stderr, "L%d: can't pchar, value out of range\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
 			break;
 		case 11:
 			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);

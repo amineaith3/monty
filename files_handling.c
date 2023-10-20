@@ -30,7 +30,7 @@ void read_file(FILE *file)
 
 	for (number_line = 0; getline(&buffer, &size, file) != -1; number_line++)
 	{
-		format = parse_line(buffer, number_line, format);
+		format = parse_file(buffer, number_line, format);
 	}
 	free(buffer);
 }
@@ -88,10 +88,10 @@ void find_function(char *op_code, char *value, int number, int format)
 
 	instruction_t func_list[] = {
 		{"push", add_tote_stack},
-		{"pall", print_stack},
-		{"pint", print_top},
-		{"pop", pop_top},
-		{"nop", nop_stack},
+		{"pall", stack_to_print},
+		{"pint", print_in_top},
+		{"pop", pop_from_top},
+		{"nop", nop_nodes},
 		{"swap", swap_in_nodes},
 		{"add", add_in_nodes},
 		{"sub", sub_in_nodes},
@@ -108,11 +108,11 @@ void find_function(char *op_code, char *value, int number, int format)
 	if (op_code[0] == '#')
 		return;
 
-	for (flag = 1, i = 0; func_list[i].op_code != NULL; i++)
+	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
-		if (strcmp(op_code, func_list[i].op_code) == 0)
+		if (strcmp(op_code, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, op_code, value, number, format);
+			call_function(func_list[i].f, op_code, value, number, format);
 			flag = 0;
 		}
 	}
@@ -137,7 +137,7 @@ void call_function(op_func function, char *op_cd, char *val, int num, int form)
 	int i;
 
 	flag = 1;
-	if (strcmp(op_code, "push") == 0)
+	if (strcmp(op_cd, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
 		{

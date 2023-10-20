@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *head = NULL;
+stack_s *head = NULL;
 
 
 /**
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file"\n);
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
  * Return: the value of the node, or NULL
  */
 
-stack_t *create_node(int position)
+stack_s *create_node(int position)
 {
-	stack_t *node;
+	stack_s *node;
 
-	node = malloc(sizeof(stack_t));
+	node = malloc(sizeof(stack_s));
 
 	if (node == NULL)
 	{
@@ -53,7 +53,7 @@ stack_t *create_node(int position)
 
 void nodes_free(void)
 {
-	stack_t *tmp;
+	stack_s *tmp;
 
 	if (head == NULL)
 	{
@@ -76,9 +76,9 @@ void nodes_free(void)
  * @node: Pointer to the new node.
  * @num: line number of the opcode.
  */
-void add_tote_queue(stack_t **node, __attribute__((unused))unsigned int num)
+void add_tote_queue(stack_s **node, __attribute__((unused))unsigned int num)
 {
-	stack_t *tmp;
+	stack_s *tmp;
 
 	if (node == NULL || *node == NULL)
 		exit(EXIT_FAILURE);
@@ -92,6 +92,6 @@ void add_tote_queue(stack_t **node, __attribute__((unused))unsigned int num)
 		tmp = tmp->next;
 
 	tmp->next = *node;
-	(*new_node)->prev = tmp;
+	(*node)->prev = tmp;
 
 }
