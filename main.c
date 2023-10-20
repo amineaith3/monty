@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_s *head = NULL;
+stack_t *head = NULL;
 
 
 /**
@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
  * Return: the value of the node, or NULL
  */
 
-stack_s *create_node(int position)
+stack_t *create_node(int position)
 {
-	stack_s *node;
+	stack_t *node;
 
-	node = malloc(sizeof(stack_s));
+	node = malloc(sizeof(stack_t));
 
 	if (node == NULL)
 	{
@@ -53,7 +53,7 @@ stack_s *create_node(int position)
 
 void nodes_free(void)
 {
-	stack_s *tmp;
+	stack_t *tmp;
 
 	if (head == NULL)
 	{
@@ -76,9 +76,9 @@ void nodes_free(void)
  * @node: Pointer to the new node.
  * @num: line number of the opcode.
  */
-void add_tote_queue(stack_s **node, __attribute__((unused))unsigned int num)
+void add_tote_queue(stack_t **node, __attribute__((unused))unsigned int num)
 {
-	stack_s *tmp;
+	stack_t *tmp;
 
 	if (node == NULL || *node == NULL)
 		exit(EXIT_FAILURE);

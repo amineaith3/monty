@@ -132,7 +132,7 @@ void find_function(char *op_code, char *value, int number, int format)
  */
 void call_function(op_func function, char *op_cd, char *val, int num, int form)
 {
-	stack_s *node;
+	stack_t *node;
 	int flag;
 	int i;
 

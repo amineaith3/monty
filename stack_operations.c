@@ -6,7 +6,7 @@
  * @line: is a number indicating the line of the op_code
  */
 
-void mul_in_nodes(stack_s **stack, unsigned int line)
+void mul_in_nodes(stack_t **stack, unsigned int line)
 {
 	int sum = 0;
 
@@ -28,7 +28,7 @@ void mul_in_nodes(stack_s **stack, unsigned int line)
  * @line: is a number indicating the line of the op_code
  */
 
-void mod_in_nodes(stack_s **stack, unsigned int line)
+void mod_in_nodes(stack_t **stack, unsigned int line)
 {
 	int sum = 0;
 

@@ -25,7 +25,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-} stack_s;
+} stack_t;
 
 
 
@@ -41,13 +41,13 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_s **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
 
-extern stack_s *head;
-typedef void (*op_func)(stack_s **, unsigned int);
+extern stack_t *head;
+typedef void (*op_func)(stack_t **, unsigned int);
 
 
 
@@ -61,37 +61,37 @@ void find_function(char *, char *, int, int);
 
 /* stacks functions*/
 
-stack_s *create_node(int position);
+stack_t *create_node(int position);
 void nodes_free(void);
-void stack_to_print(stack_s **, unsigned int);
-void add_tote_stack(stack_s **, unsigned int);
-void add_tote_queue(stack_s **, unsigned int);
+void stack_to_print(stack_t **, unsigned int);
+void add_tote_stack(stack_t **, unsigned int);
+void add_tote_queue(stack_t **, unsigned int);
 
 void call_function(op_func, char *, char *, int, int);
 
-void print_in_top(stack_s **, unsigned int);
-void pop_from_top(stack_s **, unsigned int);
-void nop_nodes(stack_s **, unsigned int);
-void swap_in_nodes(stack_s **, unsigned int);
+void print_in_top(stack_t **, unsigned int);
+void pop_from_top(stack_t **, unsigned int);
+void nop_nodes(stack_t **, unsigned int);
+void swap_in_nodes(stack_t **, unsigned int);
 
 /*Math functions on nodes*/
-void add_in_nodes(stack_s **, unsigned int);
-void sub_in_nodes(stack_s **, unsigned int);
-void div_in_nodes(stack_s **, unsigned int);
-void mul_in_nodes(stack_s **, unsigned int);
-void mod_in_nodes(stack_s **, unsigned int);
+void add_in_nodes(stack_t **, unsigned int);
+void sub_in_nodes(stack_t **, unsigned int);
+void div_in_nodes(stack_t **, unsigned int);
+void mul_in_nodes(stack_t **, unsigned int);
+void mod_in_nodes(stack_t **, unsigned int);
 
 /*String functions*/
-void p_char(stack_s **, unsigned int);
-void p_str(stack_s **, unsigned int);
-void rot_l(stack_s **, unsigned int);
-void rot_r(stack_s **, unsigned int);
+void p_char(stack_t **, unsigned int);
+void p_str(stack_t **, unsigned int);
+void rot_l(stack_t **, unsigned int);
+void rot_r(stack_t **, unsigned int);
 
 
 /*Error hanlding functions*/
 void code_to_error_1(int code_error, ...);
 void code_to_error_2(int code_error, ...);
 void code_to_error_string(int code_error, ...);
-void rot_error(stack_s **, unsigned int);
+void rot_error(stack_t **, unsigned int);
 
 #endif
