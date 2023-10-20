@@ -66,3 +66,32 @@ void nodes_free(void)
 		free(tmp);
 	}
 }
+
+
+
+
+
+/**
+ * add_tote_queue - Adds a node to the queue.
+ * @node: Pointer to the new node.
+ * @num: line number of the opcode.
+ */
+void add_tote_queue(stack_t **node, __attribute__((unused))unsigned int num)
+{
+	stack_t *tmp;
+
+	if (node == NULL || *node == NULL)
+		exit(EXIT_FAILURE);
+	if (head == NULL)
+	{
+		head = *node;
+		return;
+	}
+	tmp = head;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+
+	tmp->next = *node;
+	(*new_node)->prev = tmp;
+
+}
