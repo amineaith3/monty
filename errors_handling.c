@@ -27,7 +27,7 @@ void code_to_error_1(int code_error, ...)
 			fprintf(stderr, "USAGE : monty file\n");
 			break;
 		case 2:
-			fprintf(stderr, "Error: Can't open file%s\n", va_arg(args, char *));
+			fprintf(stderr, "Error: Can't open file %s\n", va_arg(args, char *));
 			break;
 		case 3:
 			l_num = va_arg(args, int);
