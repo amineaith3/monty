@@ -1,4 +1,4 @@
-#iinclude "monty.h"
+#include "monty.h"
 
 /**
  * nop_nodes - Does nothing.
@@ -19,7 +19,7 @@ void nop_nodes(stack_s **stack, unsigned int line)
  */
 void swap_in_nodes(stack_s **stack, unsigned int line)
 {
-	stack_t *tmp;
+	stack_s *tmp;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		code_to_error_2(8, line, "swap");
@@ -85,7 +85,7 @@ void div_in_nodes(stack_s **stack, unsigned int line)
 	int sums;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		code_tot_error_2(8, line, "div");
+		code_to_error_2(8, line, "div");
 
 	if ((*stack)->n == 0)
 		code_to_error_2(9, line);

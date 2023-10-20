@@ -88,7 +88,7 @@ void rot_l(stack_s **stack, __attribute__((unused))unsigned int line)
  * @line: is a number to identify the op_code
  */
 
-void rot_r(stack_s stack, __attribute__((unused))unsigned int line)
+void rot_r(stack_s **stack, __attribute__((unused))unsigned int line)
 {
 	stack_s *tmp;
 
