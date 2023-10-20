@@ -38,14 +38,14 @@ void read_file(FILE *file)
 
 
 /**
- * parse_line - is a function to identify which function to call
+ * parse_file - is a function to identify which function to call
  * @buffer: is a line from the file
  * @number: is the number of the line
  * @format: is the identifier of the format, is 0 its a stack, else its a queue
  * Return: Returns 0 or 1
  */
 
-int parse_line(char *buffer, int number, int format)
+int parse_file(char *buffer, int number, int format)
 {
 	char *op_code, *value;
 	const char *delimiter = "\n ";
