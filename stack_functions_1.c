@@ -8,7 +8,7 @@
  * @line: a number representing the line of the op_code
  */
 
-void add_tote_stack(stack **new_node, __attribute__((unused))unsigned int line)
+void add_tote_stack(stack_s **new_node, __attribute__((unused))unsigned int line)
 {
 	stack_t *tmp;
 
@@ -36,7 +36,7 @@ void add_tote_stack(stack **new_node, __attribute__((unused))unsigned int line)
  * @line: a number representing the line of the op_code
  */
 
-void stack_to_print(stack_t **stack, unsigned int line)
+void stack_to_print(stack_s **stack, unsigned int line)
 {
 	stack_t *tmp;
 
@@ -60,7 +60,7 @@ void stack_to_print(stack_t **stack, unsigned int line)
  * @line: a number to the line of the op_code
  */
 
-void pop_from_top(stack_t **stack, unsigned int line)
+void pop_from_top(stack_s **stack, unsigned int line)
 {
 	stack_t *tmp;
 
@@ -82,7 +82,7 @@ void pop_from_top(stack_t **stack, unsigned int line)
  * @line: is a number to the line of the op_code
  */
 
-void print_in_top(stack_t **stack, unsigned int line)
+void print_in_top(stack_s **stack, unsigned int line)
 {
 	if (stack == NULL || *stack == NULL)
 	{

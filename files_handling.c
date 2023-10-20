@@ -87,21 +87,21 @@ void find_function(char *op_code, char *value, int number, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
+		{"push", add_tote_stack},
 		{"pall", print_stack},
 		{"pint", print_top},
 		{"pop", pop_top},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
-		{"rotl", rotl},
-		{"rotr", rotr},
+		{"nop", nop_stack},
+		{"swap", swap_in_nodes},
+		{"add", add_in_nodes},
+		{"sub", sub_in_nodes},
+		{"div", div_in_nodes},
+		{"mul", mul_in_nodes},
+		{"mod", mod_in_nodes},
+		{"pchar", p_char},
+		{"pstr", p_str},
+		{"rotl", rot_l},
+		{"rotr", rot_r},
 		{NULL, NULL}
 	};
 
@@ -132,7 +132,7 @@ void find_function(char *op_code, char *value, int number, int format)
  */
 void call_function(op_func function, char *op_cd, char *val, int num, int form)
 {
-	stack_t *node;
+	stack_s *node;
 	int flag;
 	int i;
 

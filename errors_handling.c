@@ -71,7 +71,7 @@ void code_to_error_2(int code_error, ...)
 			break;
 		case 7:
 			fprintf(stderr, "L%d: can't pop, stack empty\n", va_arg(args, int));
-			break
+			break;
 		case 8:
 			l_num = va_arg(args, unsigned int);
 			operation = va_arg(args, char *);

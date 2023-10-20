@@ -7,7 +7,7 @@
  * @line: is a number to identify the op_code
  */
 
-void p_char(stack_t stack, unsigned int line)
+void p_char(stack_s stack, unsigned int line)
 {
 	int code_ascii;
 
@@ -29,7 +29,7 @@ void p_char(stack_t stack, unsigned int line)
  * @line: is a number to identify the op_code
  */
 
-void p_str(stack_t stack, __attribute__((unused))unsigned int line)
+void p_str(stack_s stack, __attribute__((unused))unsigned int line)
 {
 	int code_ascii;
 	stack_t *tmp;
@@ -61,7 +61,7 @@ void p_str(stack_t stack, __attribute__((unused))unsigned int line)
  * @line: is a number to identify the op_code
  */
 
-void rot_l(stack_t stack, __attribute__((unused))unsigned int line)
+void rot_l(stack_s stack, __attribute__((unused))unsigned int line)
 {
 	stack *tmp;
 
@@ -88,7 +88,7 @@ void rot_l(stack_t stack, __attribute__((unused))unsigned int line)
  * @line: is a number to identify the op_code
  */
 
-void rot_r(stack_t stack, __attribute__((unused))unsigned int line)
+void rot_r(stack_s stack, __attribute__((unused))unsigned int line)
 {
 	stack *tmp;
 
